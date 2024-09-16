@@ -93,27 +93,27 @@
     <h2>Tensorflow 1.x API</h2>
     <pre>
         <code class="language-python">
-            import tensorflow as tf
-            import numpy as np
+            from src import load_env
             import os
-
+            load_env()
             API_KEY = os.getenv("API_KEY")
-
-            a = tf.placeholder(tf.float32)
-            b = tf.placeholder(tf.float32)
-            c = a + b
-            with tf.Session() as sess:
-                result = sess.run(tf.add, {a, b})
         </code>
     </pre>
-    <h2>Pytorch 1.x API</h2>
+    <h2>Sample Rust code</h2>
     <pre>
-        <code class="language-python">
-            import torch
-            A = torch.Tensor([])
-            B = torch.Tensor([])
-            C = A + B
-            print(C)
+        <code class="language-rust">
+            use std::fs::File;
+            use std::io::prelude::*;
+            use std::path::Path;
+            fn readfile() -> String {
+                let path = Path::new("sample.txt");
+                let display = path.display();
+                let _file = match File::open(path) {
+                    Err(why) => panic!("error while reading file {}, {}", display, why);
+                    Ok(_file) => _file;
+                };
+                // do more stuff here....
+            }
         </code>
     </pre>
 </body>
