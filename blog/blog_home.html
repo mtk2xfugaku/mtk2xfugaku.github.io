@@ -43,27 +43,61 @@
         h2:hover {
             text-decoration: underline;
         }
+        a {
+            text-decoration: none;
+        }
+        li {
+            list-style: none;
+        }
+        ul {
+            margin-left: 170px;
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            column-gap: 100px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
         @media only screen and (max-width: 768px) {
             #blog-entry {
                 margin-left: 10px;
                 margin-right: 10px;
                 margin-top: 80px;
             }
+            ul {
+                margin-left: 10px;
+                column-gap: 50px;
+            }
         }
     </style>
 </head>
 <body>
-    <header></header>
-
+    <div id="heading">
+        <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">blogs</a></li>
+            <li><a href="#">about</a></li>
+        </ul>
+    </div>
     <div id="blog-entry">
-        <a href="./post_1/code.html"><h2>Eager Mode vs Graph Mode: Understanding graph building APIs in Deep Learning Frameworks</h2></a>
+        <a href="./post_1/code.html">Differentiable Programming</a>
+        <p id="date">Sep 16 2024</p>
+        <p>
+            With the advent of deep learning, more and more fields have been seeing an increase in the use 
+            of automatic differentiation techniques such as autograd, JAX.
+        </p>
+        <button><a href="./post_1/code.html">read more</a></button>
+    </div>
+    <div id="blog-entry">
+        <a href="#"><h2>Eager Mode vs Graph Mode: Understanding graph building APIs in Deep Learning Frameworks</h2></a>
         <p id="date">Date: Sep 16 2024</p>
         <p>
             Deep learning frameworks need to trade off between researcher friendly APIs and high performance,
             and this divide has lead to two ways of building the computational graph one allows higher powerformance
             and other allows more friendlier API.
         </p>
-        <button><a href="./post_1/code.html">read more</a></button>
+        <button><a href="#">read more</a></button>
     </div>
 
     <div id="blog-entry">

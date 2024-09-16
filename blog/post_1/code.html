@@ -14,112 +14,69 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <!-- and it's easy to individually load additional languages -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
-    <title>Document</title>
+    <title>solitary Blog</title>
     <style>
         body {
             font-family: "Comfortaa", sans-serif;
-            font-size: medium;
         }
-        pre {
-            
-            margin-top: 50px;
-            margin-bottom: 50px;
-            margin-left: 400px;
-            margin-right: 400px;
-            
-
-        }
-        code {
-            font-family: "Jet Brains Mono", monospace;
-            font-style: normal;
-            font-size: small;
-        }
-        h1, h2 {
+        #heading {
             margin-left: 200px;
-            margin-right: 200px;
-            margin-top: 100px;
-            margin-bottom: 100px;
+            margin-right:200px;
+            margin-top: 50px;
         }
-        ul {
+        li {
             list-style: none;
         }
         a {
             text-decoration: none;
         }
-        header {
-            display: flex;
-
+        #date {
+            opacity: 60%;
         }
         ul {
+            margin-left: 170px;
             display: flex;
-            align-items: center;
-            column-gap: 20px;
+            flex-direction: row;
+            justify-content: start;
+            column-gap: 100px;
+        }
+        a:hover {
+            text-decoration: underline;
         }
         @media only screen and (max-width: 768px) {
-            h1, h2 {
+            #heading {
                 margin-left: 10px;
                 margin-right: 10px;
-                font-size: large;
-            }
-            pre {
-                margin-left: 10px;
-                margin-right: 10px;
-            }
-            code {
-                font-size: x-small;
-            }
-            header {
-                display: flex;
-                flex-wrap: wrap;
+                margin-top: 80px;
             }
             ul {
-                justify-content: center;
+                margin-left: 10px;
+                column-gap: 50px;
             }
         }
     </style>
 </head>
 <body>
-    <h1>Under construction!</h1>
-    <header>
-        <h1><a href="#">Solitary Crow's Blog</a></h1>
+    <div id="header">
         <ul>
-            <li><a href="https://mtk2xfugaku.github.io">home</a></li>
-            <li><a href="https://mtk2xfugaku.github.io/blog_home.html">blog home</a></li>
-            <li><a href="https://mtk2xfugaku.github.io/about.html">about me</a></li>
-            <li><a href="#">contact</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">home</a></li>
+            <li><a href="#">blogs</a></li>
         </ul>
-    </header>
-    <h1>Eager Mode vs Graph Mode: Understanding graph building APIs in Deep Learning Frameworks</h1>
-
-    <h2>Tensorflow 1.x API</h2>
-    <pre>
-        <code class="language-python">
-            from src import load_env
-            import os
-            load_env()
-            API_KEY = os.getenv("API_KEY")
-        </code>
-    </pre>
-    <h2>Sample Rust code</h2>
-    <pre>
-        <code class="language-rust">
-            use std::fs::File;
-            use std::io::prelude::*;
-            use std::path::Path;
-            fn readfile() -> String {
-                let path = Path::new("sample.txt");
-                let display = path.display();
-                let _file = match File::open(path) {
-                    Err(why) => panic!("error while reading file {}, {}", display, why);
-                    Ok(_file) => _file;
-                };
-                // do more stuff here....
-            }
-        </code>
-    </pre>
+    </div>
+    <div id="heading">
+        <h1>Differentiable Programming</h1>
+        <p id="date">Sep 16 2024</p>
+        <h2>What is Differentiable Programming</h2>
+        <p>
+            Differentiable programming is a programming paradigm in which a numeric computer program can be 
+            differentiated throughout via automatic differentiation.This allows for gradient-based optimization of 
+            parameters in the program, often via gradient descent, as well as other learning approaches that are 
+            based on higher order derivative information. Differentiable programming has found use in a wide variety 
+            of areas, particularly scientific computing and machine learning.One of the early proposals to adopt such 
+            a framework in a systematic fashion to improve upon learning algorithms was made by the Advanced Concepts 
+            Team at the European Space Agency in early 2016
+        </p>
+    </div>
 </body>
-<script>
-// highlight the code block
-hljs.highlightAll();
-</script>
 </html>
