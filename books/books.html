@@ -1,11 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-    </head>
-    <body>
-        <center><h1>List of blooks</h1></center>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>books</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <style>
+        body {
+            font-family: "Comfortaa", sans-serif;
+        }
+        #book-entry {
+            margin-left: 200px;
+            margin-right: 200px;
+            margin-top: 100px;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            font-family: "JetBrains Mono", monospace;
+            width: 120px;
+            height: 50px;
+            border-radius: 2px;
+            background-color: white;
+        }
+        #date {
+            opacity: 60%;
+        }
+        button:hover {
+            background-color: rgb(104, 166, 216);
+        }
+        h2:hover {
+            text-decoration: underline;
+        }
+        a {
+            text-decoration: none;
+        }
+        li {
+            list-style: none;
+        }
+        ul {
+            margin-left: 170px;
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            column-gap: 100px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        img {
+            width: 90%;
+            height: 80%;
+            margin-bottom: 50px;
+        }
+        @media only screen and (max-width: 768px) {
+            #book-entry {
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-top: 80px;
+            }
+            ul {
+                margin-left: 10px;
+                column-gap: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="heading">
+        <ul>
+            <li><a href="#">about</a></li>
+            <li><a href="#">home</a></li>
+            <li><a href="#">blog</a></li>
+        </ul>
+    </div>
+    <center><h1>Books</h1></center>
+    <div id="book-entry">
+        <a href="#"><h2>OpenCV with C++</h2></a>
+        <p>By <b><a href="#">solitary_crow</a></b></p>
+        <p id="date">Sep 17 2024</p>
+        <p>
+            Almost all examples on the web use Python as the language of choice for 
+            using <b>opencv</b> mainly because it's easier to prototype with Python.
+            But Python leaves a lot at the table in terms of performance and other requirements
+            for deploying opencv applications. Using C++ would allow you to understand how OpenCV 
+            works and how to customize it for your own needs. This book requires you to know basic 
+            modern C++ and Cmake as the build tool.
+        </p>
+        <img src="./opencv-cc.png" alt="opencv-cc book screenshot">
+        <button><a href="#">read the book</a></button>
+    </div>
+</body>
 </html>
