@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/atom-one-dark.min.css" 
+integrity="sha512-Jk4AqjWsdSzSWCSuQTfYRIF84Rq/eV0G2+tu07byYwHcbTGfdmLrHjUSwvzp5HvbiqK4ibmNwdcG49Y5RGYPTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    body {
+      margin: 0;
+      font-family: "Comfortaa", monospace;
+    }
+    /* for the top header */
+    .header {
+        position: sticky;
+        top: 0;
+        padding: 10px 16px;
+        background: #555;
+        color: #f1f1f1;
+    }
+
+    .header a {
+        text-decoration: none;
+        color: #f1f1f1;
+    }
+    .header ul {
+        list-style: none;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        column-gap: 20px;
+    }
+    .main {
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+    
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+    
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    #nm {
+        color: white;
+        border: none;
+        background: none;
+
+    }
+    .main ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 20px;
+
+    }
+    .main a {
+        text-decoration: none;
+        color: black
+    }
+    .header button {
+        border: 0;
+        background: none;
+        color: white;
+        font-size: medium;
+    }
+    .header img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    pre code {
+        font-family: "JetBrains Mono", monospace;
+    }
+    @media screen and (max-width: 728px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+      .main {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li><button onclick="openNav()">&#9776 menu</button></li>
+            <li><a href="../../index.html"><img src="../../my-profile-pic.jpg" alt="pic"></a></li>
+            <li><a href="../../about.html"><i class="fa fa-user"></i> about</a></li>
+            <li><a href="../../index.html"><i class="fa fa-home"></i> home</a></li>
+            <li><a href="../blog.html">blog</a></li>
+        </ul>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="../../index.html"><i class="fa fa-home"></i> home</a>
+        <a href="../../about.html"><i class="fa fa-user"></i> about</a>
+        <a href="#introduction">introduction</a>
+    </div>
+
+    <div id="main" class="main">
+        <center>
+        <h1>Theories of Connectionism and Symbolic reasoning in the Early Artifical Intelligence research</h1>
+        <p>By <b><a href="../../about.html" line-style="none">solitary_crow</a></b></p>
+        <p id="date">Oct 9 2024</p>
+        <ul>
+            <li><a href="#" class="fa fa-twitter"></a></li>
+            <li><a href="#" class="fa fa-linkedin"></a></li>
+            <li><a href="#" class="fa fa-github"></a></li>
+        </ul>
+        </center>
+        <h2>Intorduction</h2>
+        <p id="introduction"></p>
+        <h2>References</h2>
+    </div>
+</body>
+<script>
+    hljs.highlightAll();
+    /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  //document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  //document.getElementById("main").style.marginLeft = "0";
+  document.body.style.backgroundColor = "white";
+} 
+
+// night mode
+
+</script>
+</html>
