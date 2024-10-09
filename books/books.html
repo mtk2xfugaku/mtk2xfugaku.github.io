@@ -3,103 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>books</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/atom-one-dark.min.css" 
+integrity="sha512-Jk4AqjWsdSzSWCSuQTfYRIF84Rq/eV0G2+tu07byYwHcbTGfdmLrHjUSwvzp5HvbiqK4ibmNwdcG49Y5RGYPTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    body {
+        margin: 0;
+        font-family: "Comfortaa", sans-serif;
+    }
+    #heading {
+        margin-bottom: 80px;
+    }
+    .header {
+      position: sticky;
+      top: 0;
+      padding: 10px 16px;
+      /*background: #555;
+      color: #f1f1f1;
+      */
+      background-color: white;
+      color: black;
+      border-bottom: 2px solid black;
+    }
+    .header ul {
+        display: flex;
+        list-style: none;
+        column-gap: 20px;
+        align-items: center;
+    }
+    .header img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    a {
+        text-decoration: none;
+    }
+    .post {
+        margin-left: 200px;
+        margin-right: 200px;
+        margin-bottom: 80px;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<!-- and it's easy to individually load additional languages -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
-    <style>
-        body {
-            font-family: "Comfortaa", sans-serif;
-        }
-        #book-entry {
-            margin-left: 200px;
-            margin-right: 200px;
-            margin-top: 100px;
-        }
-        a {
-            text-decoration: none;
-        }
+    .content button {
+        width: 100px;
+        height: 40px;
+        background-color: white;
+        border-radius: 5%;
 
-        button {
-            font-family: "JetBrains Mono", monospace;
-            width: 120px;
-            height: 50px;
-            border-radius: 2px;
-            background-color: white;
-        }
-        #date {
-            opacity: 60%;
-        }
-        button:hover {
-            background-color: rgb(104, 166, 216);
-        }
-        h2:hover {
-            text-decoration: underline;
-        }
-        a {
-            text-decoration: none;
-        }
-        li {
-            list-style: none;
+    }
+
+    .content button:hover {
+        background-color: rgb(193, 179, 207);
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    @media only screen and (max-width: 768px) {
+        .post {
+            margin-left: 10px;
+            margin-right: 10px;
         }
         ul {
-            margin-left: 170px;
-            display: flex;
-            flex-direction: row;
-            justify-content: start;
-            column-gap: 100px;
+            column-gap: 10px;
         }
-        a:hover {
-            text-decoration: underline;
-        }
-        img {
-            width: 90%;
-            height: 80%;
-            margin-bottom: 50px;
-        }
-        @media only screen and (max-width: 768px) {
-            #book-entry {
-                margin-left: 10px;
-                margin-right: 10px;
-                margin-top: 80px;
-            }
-            ul {
-                margin-left: 10px;
-                column-gap: 50px;
-            }
-        }
-    </style>
-</head>
+    }
+</style>
 <body>
-    <div id="heading">
+    <div class="header">
         <ul>
-            <li><a href="#">about</a></li>
-            <li><a href="#">home</a></li>
-            <li><a href="#">blog</a></li>
+            <li><a href="../index.html"><img src="../my-profile-pic.jpg" alt=""></a></li>
+            <li><a href="../about.html"><i class="fa fa-user"></i> about</a></li>
+            <li><a href="../index.html"><i class="fa fa-home"></i> home</a></li>
         </ul>
     </div>
-    <center><h1>Books</h1></center>
-    <div id="book-entry">
-        <a href="#"><h2>OpenCV with C++</h2></a>
-        <p>By <b><a href="#">solitary_crow</a></b></p>
-        <p id="date">Sep 17 2024</p>
-        <p>
-            Almost all examples on the web use Python as the language of choice for 
-            using <b>opencv</b> mainly because it's easier to prototype with Python.
-            But Python leaves a lot at the table in terms of performance and other requirements
-            for deploying opencv applications. Using C++ would allow you to understand how OpenCV 
-            works and how to customize it for your own needs. This book requires you to know basic 
-            modern C++ and Cmake as the build tool.
-        </p>
-        <img src="./opencv-cc.png" alt="opencv-cc book screenshot">
-        <button><a href="#">read the book</a></button>
+    <center><h1 id="heading">Books</h1></center>
+    <div class="content">
+        <div class="post">
+            <a href="#"><h2>Computer Vision with OpenCV and C++</h2></a>
+            <p>By <b><a href="../about.html">solitary_crow</a></b></p>
+            <p id="date">Oct 9 2024</p>
+            <!--there should be a streenshot as well here!-->
+            <a href="#"><button>read more</button></a>
+        </div>
     </div>
 </body>
 </html>
