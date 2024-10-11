@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/atom-one-dark.min.css" 
+integrity="sha512-Jk4AqjWsdSzSWCSuQTfYRIF84Rq/eV0G2+tu07byYwHcbTGfdmLrHjUSwvzp5HvbiqK4ibmNwdcG49Y5RGYPTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Project</title>
+</head>
+<body>
+
+    <div class="header">
+        <div id="header-content">
+            <ul>
+                <li><a href="../about.html"><img src="../my-profile-pic.jpg" alt="pic"></a></li>
+                <li><a href="../blog/blog.html">Blog</a></li>
+                <li><a href="../index.html" class="fa fa-home" style="font-size: 25px"></a></li>
+            </ul>
+        </div>
+    </div>
+    <center>
+        <h1>λ-calculus + Applied Maths = 🧬 🤖</h1>
+        <h2>
+            A curated list of projects using systems programming, computer science,
+            and applied mathematics
+        </h2>
+    </center>
+    <div class="content">
+       
+        <div class="post">
+            <a href="#"><h2><b id="project-name">dslmDT</b>: DSL of Maths using Dependent Type Theory</h2></a>
+            <p>
+                DSL of maths is the application of purely functional programming 
+                in developing domain specific languages for mathematics. This work builds 
+                on the original work by <a href="#" style="color: blue">mathdsl</a> and introduces more stricter 
+                type theory construct using <b>dependent type theory</b>
+            </p>
+            <ul>
+                <li><a href="#" class="fa fa-github"> github</a></li>
+                <!--add the download field to the link for paper !-->
+                <li><a href="#" class="fa fa-solid fa-file"> Paper</a></li>
+            </ul>
+            <img src="./formula-svgrepo-com.png" alt="">
+        </div>
+
+        <div class="post">
+            <a href="#"><h2><b id="project-name">biort:</b> Bio-inspired algorithms in Rust</h2></a>
+            <p>
+                Biological algorithms are used in different areas of computer science and optimization theory such 
+                as evolutionary algorithms, genetic algorithms.
+            </p>
+            <ul>
+                <li><a href="#" class="fa fa-github"> github</a></li>
+                <li><a href="#" class="fa fa-solid fa-file"> Paper</a></li>
+            </ul>
+            <img src="./bio-svgrepo-com.png" alt="">
+        </div>
+        <div class="post">
+            <a href="#"><b id="project-name">pplECPP:</b> Probabilistic Programming Language in Embedded C++</a>
+            <p>
+                Probabilistic Programming uses probability theory to model things
+            </p>
+            <ul>
+                <li><a href="#" class="fa fa-github"> github</a></li>
+                <li><a href="#" class="fa fa-file"> Paper</a></li>
+            </ul>
+            <img src="./graph-analytics-business-svgrepo-com.png" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    hljs.highlightAll()
+</script>
+</html>
