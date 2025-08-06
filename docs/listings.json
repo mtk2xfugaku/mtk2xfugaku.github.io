@@ -1,14 +1,19 @@
 [
   {
+    "listing": "/Blog/posts/code-latext/index.html",
+    "items": []
+  },
+  {
     "listing": "/Blog/index.html",
     "items": [
+      "/Blog/posts/sycl-pstl/index.html",
       "/Blog/posts/post-with-code/index.html",
       "/Blog/posts/code-latext/index.html",
       "/Blog/posts/welcome/index.html"
     ]
   },
   {
-    "listing": "/Blog/posts/code-latext/index.html",
+    "listing": "/Blog/posts/sycl-pstl/index.html",
     "items": []
   }
 ]

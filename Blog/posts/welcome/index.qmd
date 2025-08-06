@@ -1,6 +1,6 @@
 ---
 title: "Welcome To My Blog"
-author: "Tristan O'Malley"
+author: "solitary_crow"
 date: "2025-08-03"
 categories: [news]
 ---

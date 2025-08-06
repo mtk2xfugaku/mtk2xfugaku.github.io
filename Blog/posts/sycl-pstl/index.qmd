@@ -1,0 +1,7 @@
+---
+title: "C++ native high performance computing using PSTL and SYCL"
+author: "solitary_crow"
+date: "2025-08-10"
+listing: default
+---
+
