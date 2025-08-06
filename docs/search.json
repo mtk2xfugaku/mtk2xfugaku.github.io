@@ -53,7 +53,7 @@
     "href": "Blog/index.html",
     "title": "Solitary Crow’s Blog",
     "section": "",
-    "text": "C++ native high performance computing using PSTL and SYCL\n\n\n\n\n\n\n\n\nAug 10, 2025\n\n\nsolitary_crow\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nAug 6, 2025\n\n\nsolitary_crow\n\n\n\n\n\n\n\n\n\n\n\n\nTesting Latex and Code\n\n\n\nmath\n\nc++\n\ncuda\n\n\n\n\n\n\n\n\n\nAug 6, 2025\n\n\nsolitary_crow\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nAug 3, 2025\n\n\nsolitary_crow\n\n\n\n\n\nNo matching items"
+    "text": "C++ native high performance computing using PSTL and SYCL\n\n\n\nc++\n\nhpc\n\nsycl\n\ntriton\n\nspirv\n\npstl\n\ncuda\n\n\n\n\n\n\n\n\n\nAug 10, 2025\n\n\nsolitary_crow\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nAug 6, 2025\n\n\nsolitary_crow\n\n\n\n\n\n\n\n\n\n\n\n\nTesting Latex and Code\n\n\n\nmath\n\nc++\n\ncuda\n\n\n\n\n\n\n\n\n\nAug 6, 2025\n\n\nsolitary_crow\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nAug 3, 2025\n\n\nsolitary_crow\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Blog/posts/post-with-code/index.html",
@@ -61,12 +61,5 @@
     "title": "Post With Code",
     "section": "",
     "text": "This is a post with executable code."
-  },
-  {
-    "objectID": "Blog/posts/sycl-pstl/index.html",
-    "href": "Blog/posts/sycl-pstl/index.html",
-    "title": "C++ native high performance computing using PSTL and SYCL",
-    "section": "",
-    "text": "No matching items"
   }
 ]
