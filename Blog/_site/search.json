@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "posts/code-latext/index.html",
+    "href": "posts/code-latext/index.html",
+    "title": "Testing Latex and Code",
+    "section": "",
+    "text": "\\[x = 1\\] \\[\\frac{1}{x} = 2\\]"
+  },
+  {
+    "objectID": "posts/code-latext/index.html#latex-in-markdown",
+    "href": "posts/code-latext/index.html#latex-in-markdown",
+    "title": "Testing Latex and Code",
+    "section": "",
+    "text": "\\[x = 1\\] \\[\\frac{1}{x} = 2\\]"
+  },
+  {
+    "objectID": "posts/code-latext/index.html#code-in-markdown",
+    "href": "posts/code-latext/index.html#code-in-markdown",
+    "title": "Testing Latex and Code",
+    "section": "Code in markdown",
+    "text": "Code in markdown\ndef sum(seq):\n    accu = 0\n    for i in seq:\n        accu += i\n    return accu\n#define TENSOR_CHECK(expression) {      \\\n    tensorError_t status = expression;  \\\n    if (status != tensorSuccess) {      \\\n        std::cerr &lt;&lt; \"[ERROR] \"         \\\n        &lt;&lt; tensorGetErrorString(status) \\\n        &lt;&lt; \" in file \"                  \\\n        &lt;&lt; __FILE__                     \\\n        &lt;&lt; \" at line \"                  \\\n        &lt;&lt; __LINE__                     \\\n        &lt;&lt; std::endl; }                 \\\n}"
+  }
+]

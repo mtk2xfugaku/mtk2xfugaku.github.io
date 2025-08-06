@@ -1,0 +1,39 @@
+---
+title: "Testing Latex and Code"
+author: "solitary_crow"
+date: "2025-08-06"
+categories: ["math", "c++", "cuda"]
+listing: default
+---
+
+## Latex in markdown
+
+$$x = 1$$
+$$\frac{1}{x} = 2$$
+
+## Code in markdown
+
+
+```python
+def sum(seq):
+    accu = 0
+    for i in seq:
+        accu += i
+    return accu
+```
+
+
+```c++
+#define TENSOR_CHECK(expression) {      \
+    tensorError_t status = expression;  \
+    if (status != tensorSuccess) {      \
+        std::cerr << "[ERROR] "         \
+        << tensorGetErrorString(status) \
+        << " in file "                  \
+        << __FILE__                     \
+        << " at line "                  \
+        << __LINE__                     \
+        << std::endl; }                 \
+}
+```
+
