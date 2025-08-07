@@ -1,9 +1,0 @@
----
-title: "Post With Code"
-author: "solitary_crow"
-date: "2025-08-06"
-categories: [news, code, analysis]
-image: "image.jpg"
----
-
-This is a post with executable code.
