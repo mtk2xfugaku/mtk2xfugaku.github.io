@@ -1,19 +1,21 @@
 [
   {
-    "listing": "/Blog/posts/code-latext/index.html",
-    "items": []
+    "listing": "/AIEBlog/index.html",
+    "items": [
+      "/AIEBlog/posts/post-with-code/index.html",
+      "/AIEBlog/posts/ai-beyong-the-hype/index.html",
+      "/AIEBlog/posts/welcome/index.html"
+    ]
   },
   {
     "listing": "/Blog/index.html",
     "items": [
+      "/Blog/posts/dynn/index.html",
+      "/Blog/posts/tensor-layout/index.html",
       "/Blog/posts/sycl-pstl/index.html",
       "/Blog/posts/post-with-code/index.html",
       "/Blog/posts/code-latext/index.html",
       "/Blog/posts/welcome/index.html"
     ]
-  },
-  {
-    "listing": "/Blog/posts/sycl-pstl/index.html",
-    "items": []
   }
 ]
