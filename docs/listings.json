@@ -1,14 +1,5 @@
 [
   {
-    "listing": "/AIEBlog/index.html",
-    "items": [
-      "/AIEBlog/posts/ml_compiler_intro/index.html",
-      "/AIEBlog/posts/post-with-code/index.html",
-      "/AIEBlog/posts/ai-beyong-the-hype/index.html",
-      "/AIEBlog/posts/welcome/index.html"
-    ]
-  },
-  {
     "listing": "/Blog/index.html",
     "items": [
       "/Blog/posts/tensoriter/index.html",
@@ -19,6 +10,16 @@
       "/Blog/posts/post-with-code/index.html",
       "/Blog/posts/code-latext/index.html",
       "/Blog/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/AIEBlog/index.html",
+    "items": [
+      "/AIEBlog/posts/pssh-and-lisp/index.html",
+      "/AIEBlog/posts/ml_compiler_intro/index.html",
+      "/AIEBlog/posts/post-with-code/index.html",
+      "/AIEBlog/posts/ai-beyong-the-hype/index.html",
+      "/AIEBlog/posts/welcome/index.html"
     ]
   }
 ]
