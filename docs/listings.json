@@ -2,10 +2,8 @@
   {
     "listing": "/Blog/index.html",
     "items": [
-      "/Blog/posts/tensoriter/index.html",
-      "/Blog/posts/tensor-complete/index.html",
       "/Blog/posts/dynn/index.html",
-      "/Blog/posts/tensor-layout/index.html",
+      "/Blog/posts/tensors/index.html",
       "/Blog/posts/sycl-pstl/index.html",
       "/Blog/posts/post-with-code/index.html",
       "/Blog/posts/code-latext/index.html",
