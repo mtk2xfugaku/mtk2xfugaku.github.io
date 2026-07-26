@@ -2,15 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="solitary_crow">
-<meta name="dcterms.date" content="2025-09-16">
 
-<title>Machine Learning Compilers: A high level overview – Solitary Crow’s Lab</title>
+<title>OpenMP: A deep overview – Solitary Crow’s Lab</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -21,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -38,10 +75,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-a98ec624fb63d9b712fc3a6f62e2b305.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-be3771519f21acc1c5b6733774c6dcd8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,12 +141,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../AIEBlog/index.html"> 
-<span class="menu-text">AIE Blog</span></a>
+    <a class="nav-link" href="../../../Books/index.html"> 
+<span class="menu-text">Books</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../books.html"> 
-<span class="menu-text">books</span></a>
+    <a class="nav-link" href="../../../Writeups/index.html"> 
+<span class="menu-text">Write-ups</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -124,11 +161,15 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Machine Learning Compilers: A high level overview</h1>
+      <h1 class="title">OpenMP: A deep overview</h1>
                                 <div class="quarto-categories">
+                <div class="quarto-category">openmp</div>
+                <div class="quarto-category">parallel</div>
+                <div class="quarto-category">hpc</div>
+                <div class="quarto-category">cuda</div>
+                <div class="quarto-category">llvm</div>
+                <div class="quarto-category">mlir</div>
                 <div class="quarto-category">compiler</div>
-                <div class="quarto-category">ml</div>
-                <div class="quarto-category">tensor</div>
               </div>
                   </div>
   </div>
@@ -143,12 +184,6 @@ ul.task-list li input[type="checkbox"] {
             </div>
     </div>
       
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">September 16, 2025</p>
-      </div>
-    </div>
     
       
     </div>
@@ -157,8 +192,23 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#directive-based-programming-model" id="toc-directive-based-programming-model" class="nav-link" data-scroll-target="#directive-based-programming-model">Directive based programming model</a></li>
+  <li><a href="#openmp-task" id="toc-openmp-task" class="nav-link" data-scroll-target="#openmp-task">OpenMP Task</a></li>
+  <li><a href="#openmp-on-the-accelerator" id="toc-openmp-on-the-accelerator" class="nav-link" data-scroll-target="#openmp-on-the-accelerator">OpenMP on the Accelerator</a></li>
+  <li><a href="#openmp-and-the-compiler" id="toc-openmp-and-the-compiler" class="nav-link" data-scroll-target="#openmp-and-the-compiler">OpenMP and the Compiler</a>
+  <ul class="collapse">
+  <li><a href="#openmp-and-llvm" id="toc-openmp-and-llvm" class="nav-link" data-scroll-target="#openmp-and-llvm">OpenMP and LLVM</a></li>
+  <li><a href="#openmp-and-mlir" id="toc-openmp-and-mlir" class="nav-link" data-scroll-target="#openmp-and-mlir">OpenMP and MLIR</a></li>
+  </ul></li>
+  <li><a href="#conculusion" id="toc-conculusion" class="nav-link" data-scroll-target="#conculusion">Conculusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -167,11 +217,95 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>In recent years there have been a lot of interest in machine learning compilers (they are also called deep learning compilers or AI compilers). Yet still they are a niche topic even within the niche field of compiler engineering. This post will try to make things clear about the nature of their function and their design and how they are different from “tradition” compilers. This post will also introduce relevent context and background information needed to build a proper intuition. The reader is assumbed to have some background or familiarity with machine learning and deep learning and compilers but I will try my best to give enough context to grasp it.</p>
+<p>NOTE: This should be inside a notice box or something</p>
+<blockquote class="blockquote">
+<p>No generative technology has been used in writing of this blog post or the below mentioned code examples, all mistakes are my own. For any comment open a pull request on the blog’s github page or contact me via <a href="mailto:nathan5114576@gmail.com">email</a>.</p>
+</blockquote>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This is a deep overview of openmp<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> programming model used in C/C++ and Python, openmp is an implicit programming model used for writing single-node high performance parallel code for cpu as well as accelerators (with the help of openmp offload). OpenMP contains the least amount of friction when it comes to writing parallel programs compared to other programming models and high performance APIs.</p>
+<p>In order to follow through with the examples in the blog post, you can clone the OpenMP playground github repo<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> on your system, for GPGPU examples you must have a CUDA supported device as well as a openmp offload supported compiler system such as <code>nvc++</code> or clang with offloading enabled. The guide on how to compile the clang compiler with openmp offload support is available <a href="youtube link">here</a></p>
+</section>
+<section id="directive-based-programming-model" class="level2">
+<h2 class="anchored" data-anchor-id="directive-based-programming-model">Directive based programming model</h2>
+<p>Directive<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> based programming is a way to hint the compiler about what transformation should be applied to which code block. Besides openmp there is also the OpenACC<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> programming model for GPGPU applications which works similar to openmp but with some differences.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode cc code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span> <span class="op">&lt;</span><span class="bu">std::</span>size_t row<span class="op">,</span> <span class="bu">std::</span>size_t col<span class="op">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> omp_add<span class="op">(</span><span class="at">const</span> vector_f32<span class="op">&amp;</span> a<span class="op">,</span> <span class="at">const</span> vector_f32<span class="op">&amp;</span> b<span class="op">,</span> vector_f32<span class="op">&amp;</span> c<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#pragma omp parallel for</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> row<span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="pp">#pragma omp simd</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> col<span class="op">;</span> j<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="dt">size_t</span> idx <span class="op">=</span> offset<span class="op">(</span>col<span class="op">,</span> i<span class="op">,</span> j<span class="op">);</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>            c<span class="op">[</span>idx<span class="op">]</span> <span class="op">=</span> a<span class="op">[</span>idx<span class="op">]</span> <span class="op">+</span> b<span class="op">[</span>idx<span class="op">];</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="openmp-task" class="level2">
+<h2 class="anchored" data-anchor-id="openmp-task">OpenMP Task</h2>
+<p>Task based abstraction allows for irregular and dynamic parallel tasks to be executed, besides openmp there are task based abstractions in onetbb, kokkos and taskflow. Task based programs are often structred as a Directed Acyclic Graphs or DAGs with explicit dependencies.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode cc code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#pragma omp parallel {</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#pragma omp single {</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="pp">#pragma omp task {</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>            printf<span class="op">(</span><span class="st">"hello"</span><span class="op">);</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="pp">#pragma omp task {</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>            printf<span class="op">(</span><span class="st">"world"</span><span class="op">);</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="openmp-on-the-accelerator" class="level2">
+<h2 class="anchored" data-anchor-id="openmp-on-the-accelerator">OpenMP on the Accelerator</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode cc code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#define NX </span><span class="dv">102400</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">double</span> vecA<span class="op">[</span>NX<span class="op">],</span> vecB<span class="op">[</span>NX<span class="op">],</span> vecC<span class="op">[</span>NX<span class="op">];</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> i<span class="op">;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* Initialization of the vectors */</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span>i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> NX<span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        vecA<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> <span class="fl">1.0</span><span class="op">;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        vecB<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> <span class="fl">2.0</span><span class="op">;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="pp">#pragma omp target</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span>i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> NX<span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        vecC<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> vecA<span class="op">[</span>i<span class="op">]</span> <span class="op">+</span> vecB<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="openmp-and-the-compiler" class="level2">
+<h2 class="anchored" data-anchor-id="openmp-and-the-compiler">OpenMP and the Compiler</h2>
+<p>OpenMP is relient on the compiler to add hooks to the openmp runtime system.</p>
+<section id="openmp-and-llvm" class="level3">
+<h3 class="anchored" data-anchor-id="openmp-and-llvm">OpenMP and LLVM</h3>
+</section>
+<section id="openmp-and-mlir" class="level3">
+<h3 class="anchored" data-anchor-id="openmp-and-mlir">OpenMP and MLIR</h3>
+</section>
+</section>
+<section id="conculusion" class="level2">
+<h2 class="anchored" data-anchor-id="conculusion">Conculusion</h2>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>https://www.openmp.org/<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>link to the repo<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>https://enccs.github.io/gpu-programming/6-directive-based-models/<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>https://www.openacc.org/<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -223,13 +357,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -575,7 +710,7 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Copyright 2025, solitary_crow</p>
+<p>Copyright 2026, solitary_crow</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
@@ -589,12 +724,6 @@ ul.task-list li input[type="checkbox"] {
     </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com">
-      <i class="bi bi-twitter" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
     <a class="nav-link" href="https://reddit.com">
       <i class="bi bi-reddit" role="img">
 </i> 
@@ -603,6 +732,12 @@ ul.task-list li input[type="checkbox"] {
     <li class="nav-item compact">
     <a class="nav-link" href="https://linkedin.com">
       <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://bsky.app/">
+      <i class="bi bi-bluesky" role="img">
 </i> 
     </a>
   </li>  

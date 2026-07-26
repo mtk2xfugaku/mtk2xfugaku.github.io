@@ -1,7 +1,15 @@
 [
   {
+    "listing": "/Books/index.html",
+    "items": [
+      "/Books/posts/adv_py/index.html"
+    ]
+  },
+  {
     "listing": "/Blog/index.html",
     "items": [
+      "/Blog/posts/learned_data_structures/index.html",
+      "/Blog/posts/omp_overview/index.html",
       "/Blog/posts/dynn/index.html",
       "/Blog/posts/tensors/index.html",
       "/Blog/posts/sycl-pstl/index.html",
@@ -11,13 +19,10 @@
     ]
   },
   {
-    "listing": "/AIEBlog/index.html",
+    "listing": "/Writeups/index.html",
     "items": [
-      "/AIEBlog/posts/pssh-and-lisp/index.html",
-      "/AIEBlog/posts/ml_compiler_intro/index.html",
-      "/AIEBlog/posts/post-with-code/index.html",
-      "/AIEBlog/posts/ai-beyong-the-hype/index.html",
-      "/AIEBlog/posts/welcome/index.html"
+      "/Writeups/posts/parallel_programming/index.html",
+      "/Writeups/posts/nuts_and_bolts_of_concurrency/index.html"
     ]
   }
 ]

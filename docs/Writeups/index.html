@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>AIE Blog – Solitary Crow’s Lab</title>
+<title>Write-ups by Solitary Crow – Solitary Crow’s Lab</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -38,10 +41,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a98ec624fb63d9b712fc3a6f62e2b305.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-be3771519f21acc1c5b6733774c6dcd8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,9 +82,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -100,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
   </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -113,7 +116,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -162,12 +165,12 @@ window.Quarto = {
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../AIEBlog/index.html" aria-current="page"> 
-<span class="menu-text">AIE Blog</span></a>
+    <a class="nav-link" href="../Books/index.html"> 
+<span class="menu-text">Books</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../books.html"> 
-<span class="menu-text">books</span></a>
+    <a class="nav-link active" href="../Writeups/index.html" aria-current="page"> 
+<span class="menu-text">Write-ups</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -182,7 +185,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">AIE Blog</h1>
+      <h1 class="title">Write-ups by Solitary Crow</h1>
                       </div>
   </div>
     
@@ -200,7 +203,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="YWk=">ai <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YW5hbHlzaXM=">analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y29kZQ==">code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y29tcGlsZXI=">compiler <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bGlzcA==">lisp <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWw=">ml <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(2)</span></div><div class="category" data-category="c3ltYm9saWM=">symbolic <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dGVuc29y">tensor <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Yw==">c <span class="quarto-category-count">(2)</span></div><div class="category" data-category="YyUyQiUyQg==">c++ <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Y29uY3VycmVuY3k=">concurrency <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y3VkYQ==">cuda <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Zm9yay1qb2lu">fork-join <span class="quarto-category-count">(1)</span></div><div class="category" data-category="b3Blbm1w">openmp <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGFyYWxsZWw=">parallel <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c2ltZA==">simd <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c3ljbA==">sycl <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dGFzaw==">task <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dmVjdG9y">vector <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dnVsa2Fu">vulkan <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -214,159 +217,84 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="YWklMkNsaXNwJTJDc3ltYm9saWM=" data-listing-date-sort="1760466600000" data-listing-file-modified-sort="1760415842047" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail"><a href="../AIEBlog/posts/pssh-and-lisp/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="0" data-categories="YyUyQiUyQiUyQ3N5Y2wlMkNjdWRhJTJDYyUyQ3BhcmFsbGVsJTJDdmVjdG9yJTJDc2ltZCUyQ3Z1bGthbiUyQ2Zvcmstam9pbg==" data-listing-file-modified-sort="1781589147058" data-listing-reading-time-sort="1" data-listing-word-count-sort="28">
+<div class="thumbnail"><a href="../Writeups/posts/parallel_programming/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../AIEBlog/posts/pssh-and-lisp/index.html" class="no-external">Physical Symbol System Hypothesis and Lisp</a>
+<a href="../Writeups/posts/parallel_programming/index.html" class="no-external">Parallel Programming: A deep introduction</a>
 </h3>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('YWk='); return false;">ai</div>
+<div class="listing-category" onclick="window.quartoListingCategory('YyUyQiUyQg=='); return false;">c++</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('bGlzcA=='); return false;">lisp</div>
+<div class="listing-category" onclick="window.quartoListingCategory('c3ljbA=='); return false;">sycl</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('c3ltYm9saWM='); return false;">symbolic</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Y3VkYQ=='); return false;">cuda</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Yw=='); return false;">c</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cGFyYWxsZWw='); return false;">parallel</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dmVjdG9y'); return false;">vector</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2ltZA=='); return false;">simd</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dnVsa2Fu'); return false;">vulkan</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Zm9yay1qb2lu'); return false;">fork-join</div>
 
 </div>
-<div class="delink listing-description"><a href="../AIEBlog/posts/pssh-and-lisp/index.html" class="no-external">
-
+<div class="delink listing-description"><a href="../Writeups/posts/parallel_programming/index.html" class="no-external">
+Should it be epilogue or conclusion?
 </a></div>
 </div>
 <div class="metadata">
-<a href="../AIEBlog/posts/pssh-and-lisp/index.html" class="no-external">
-<div class="listing-date">
-Oct 15, 2025
-</div>
+<a href="../Writeups/posts/parallel_programming/index.html" class="no-external">
 <div class="listing-author">
-solitary_crow
+Solitary Crow
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Y29tcGlsZXIlMkNtbCUyQ3RlbnNvcg==" data-listing-date-sort="1757961000000" data-listing-file-modified-sort="1761270473410" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="112">
-<div class="thumbnail"><a href="../AIEBlog/posts/ml_compiler_intro/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="1" data-categories="Y29uY3VycmVuY3klMkNjJTJCJTJCJTJDYyUyQ29wZW5tcCUyQ3Rhc2s=" data-listing-file-modified-sort="1782052525229" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="thumbnail"><a href="../Writeups/posts/nuts_and_bolts_of_concurrency/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../AIEBlog/posts/ml_compiler_intro/index.html" class="no-external">Machine Learning Compilers: A high level overview</a>
+<a href="../Writeups/posts/nuts_and_bolts_of_concurrency/index.html" class="no-external">Nuts and Bolts of Concurrency: Compilers and Runtimes</a>
 </h3>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('Y29tcGlsZXI='); return false;">compiler</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Y29uY3VycmVuY3k='); return false;">concurrency</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('bWw='); return false;">ml</div>
+<div class="listing-category" onclick="window.quartoListingCategory('YyUyQiUyQg=='); return false;">c++</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('dGVuc29y'); return false;">tensor</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Yw=='); return false;">c</div>
 
-</div>
-<div class="delink listing-description"><a href="../AIEBlog/posts/ml_compiler_intro/index.html" class="no-external">
-In recent years there have been a lot of interest in machine learning compilers (they are also called deep learning compilers or AI compilers). Yet still they are a niche…
-</a></div>
-</div>
-<div class="metadata">
-<a href="../AIEBlog/posts/ml_compiler_intro/index.html" class="no-external">
-<div class="listing-date">
-Sep 16, 2025
-</div>
-<div class="listing-author">
-solitary_crow
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="bmV3cyUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1756146600000" data-listing-file-modified-sort="1756229312189" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="7">
-<div class="thumbnail"><a href="../AIEBlog/posts/post-with-code/index.html" class="no-external">
+<div class="listing-category" onclick="window.quartoListingCategory('b3Blbm1w'); return false;">openmp</div>
 
-<img loading="lazy" src="../AIEBlog/posts/post-with-code/image.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../AIEBlog/posts/post-with-code/index.html" class="no-external">Post With Code</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y29kZQ=='); return false;">code</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">analysis</div>
+<div class="listing-category" onclick="window.quartoListingCategory('dGFzaw=='); return false;">task</div>
 
 </div>
-<div class="delink listing-description"><a href="../AIEBlog/posts/post-with-code/index.html" class="no-external">
-This is a post with executable code.
-</a></div>
-</div>
-<div class="metadata">
-<a href="../AIEBlog/posts/post-with-code/index.html" class="no-external">
-<div class="listing-date">
-Aug 26, 2025
-</div>
-<div class="listing-author">
-Harlow Malloc
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1756146600000" data-listing-file-modified-sort="1756229870874" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail"><a href="../AIEBlog/posts/ai-beyong-the-hype/index.html" class="no-external">
+<div class="delink listing-description"><a href="../Writeups/posts/nuts_and_bolts_of_concurrency/index.html" class="no-external">
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../AIEBlog/posts/ai-beyong-the-hype/index.html" class="no-external">Artificial Intelligence: Beyond the hype and anxiety</a>
-</h3>
-<div class="delink listing-description"><a href="../AIEBlog/posts/ai-beyong-the-hype/index.html" class="no-external">
+
+
 
 </a></div>
 </div>
 <div class="metadata">
-<a href="../AIEBlog/posts/ai-beyong-the-hype/index.html" class="no-external">
-<div class="listing-date">
-Aug 26, 2025
-</div>
+<a href="../Writeups/posts/nuts_and_bolts_of_concurrency/index.html" class="no-external">
 <div class="listing-author">
-solitary_crow
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="bmV3cw==" data-listing-date-sort="1755887400000" data-listing-file-modified-sort="1756229312186" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
-<div class="thumbnail"><a href="../AIEBlog/posts/welcome/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/welcome/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../AIEBlog/posts/welcome/index.html" class="no-external">Welcome To My Blog</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
-
-</div>
-<div class="delink listing-description"><a href="../AIEBlog/posts/welcome/index.html" class="no-external">
-This is the first post in a Quarto blog. Welcome!
-</a></div>
-</div>
-<div class="metadata">
-<a href="../AIEBlog/posts/welcome/index.html" class="no-external">
-<div class="listing-date">
-Aug 23, 2025
-</div>
-<div class="listing-author">
-Tristan O’Malley
+Solitary Crow
 </div>
 </a>
 </div>
@@ -425,13 +353,14 @@ Tristan O’Malley
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -777,7 +706,7 @@ Tristan O’Malley
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Copyright 2025, solitary_crow</p>
+<p>Copyright 2026, solitary_crow</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
@@ -791,12 +720,6 @@ Tristan O’Malley
     </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com">
-      <i class="bi bi-twitter" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
     <a class="nav-link" href="https://reddit.com">
       <i class="bi bi-reddit" role="img">
 </i> 
@@ -805,6 +728,12 @@ Tristan O’Malley
     <li class="nav-item compact">
     <a class="nav-link" href="https://linkedin.com">
       <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://bsky.app/">
+      <i class="bi bi-bluesky" role="img">
 </i> 
     </a>
   </li>  

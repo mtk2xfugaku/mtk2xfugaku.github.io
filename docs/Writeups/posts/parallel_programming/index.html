@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="solitary_crow">
-<meta name="dcterms.date" content="2025-08-03">
+<meta name="author" content="Solitary Crow">
 
-<title>Welcome To My Blog – Solitary Crow’s Lab</title>
+<title>Parallel Programming: A deep introduction – Solitary Crow’s Lab</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -127,9 +126,17 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome To My Blog</h1>
+      <h1 class="title">Parallel Programming: A deep introduction</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">news</div>
+                <div class="quarto-category">c++</div>
+                <div class="quarto-category">sycl</div>
+                <div class="quarto-category">cuda</div>
+                <div class="quarto-category">c</div>
+                <div class="quarto-category">parallel</div>
+                <div class="quarto-category">vector</div>
+                <div class="quarto-category">simd</div>
+                <div class="quarto-category">vulkan</div>
+                <div class="quarto-category">fork-join</div>
               </div>
                   </div>
   </div>
@@ -140,16 +147,10 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>solitary_crow </p>
+               <p>Solitary Crow </p>
             </div>
     </div>
       
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">August 3, 2025</p>
-      </div>
-    </div>
     
       
     </div>
@@ -158,8 +159,21 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#cpu-parallelism" id="toc-cpu-parallelism" class="nav-link" data-scroll-target="#cpu-parallelism">CPU Parallelism</a></li>
+  <li><a href="#gpu-parallelism" id="toc-gpu-parallelism" class="nav-link" data-scroll-target="#gpu-parallelism">GPU Parallelism</a></li>
+  <li><a href="#parallel-abstractions-and-patterns" id="toc-parallel-abstractions-and-patterns" class="nav-link" data-scroll-target="#parallel-abstractions-and-patterns">Parallel Abstractions and Patterns</a></li>
+  <li><a href="#parallel-programming-tools" id="toc-parallel-programming-tools" class="nav-link" data-scroll-target="#parallel-programming-tools">Parallel Programming Tools</a></li>
+  <li><a href="#task-parallelism" id="toc-task-parallelism" class="nav-link" data-scroll-target="#task-parallelism">Task parallelism</a></li>
+  <li><a href="#cuda" id="toc-cuda" class="nav-link" data-scroll-target="#cuda">CUDA</a></li>
+  <li><a href="#epilogue" id="toc-epilogue" class="nav-link" data-scroll-target="#epilogue">Epilogue</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -168,11 +182,34 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="thumbnail.jpg" class="img-fluid"></p>
-<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+</section>
+<section id="cpu-parallelism" class="level2">
+<h2 class="anchored" data-anchor-id="cpu-parallelism">CPU Parallelism</h2>
+</section>
+<section id="gpu-parallelism" class="level2">
+<h2 class="anchored" data-anchor-id="gpu-parallelism">GPU Parallelism</h2>
+</section>
+<section id="parallel-abstractions-and-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="parallel-abstractions-and-patterns">Parallel Abstractions and Patterns</h2>
+</section>
+<section id="parallel-programming-tools" class="level2">
+<h2 class="anchored" data-anchor-id="parallel-programming-tools">Parallel Programming Tools</h2>
+</section>
+<section id="task-parallelism" class="level2">
+<h2 class="anchored" data-anchor-id="task-parallelism">Task parallelism</h2>
+</section>
+<section id="cuda" class="level2">
+<h2 class="anchored" data-anchor-id="cuda">CUDA</h2>
+</section>
+<section id="epilogue" class="level2">
+<h2 class="anchored" data-anchor-id="epilogue">Epilogue</h2>
+<p>Should it be epilogue or conclusion?</p>
+<p>Add a consulting banner with contact information here!</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
